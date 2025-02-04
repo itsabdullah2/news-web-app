@@ -5,11 +5,9 @@ import { Link } from 'react-router-dom';
 
 const BusinessSampleNews = () => {
   const [businessNewsData, setBusinessNewsData] = useState<Articles[]>([]);
-  const [displayedNews, setDisplayedNews] = useState<Articles[]>([]);
   useEffect(() => {
     getData('business', (data) => {
-      setBusinessNewsData(data);
-      setDisplayedNews(data.slice(0, 6)); // Limit to 6 items
+      setBusinessNewsData(data.slice(0, 6)); // Limit to 6 items
     });
   }, []);
 
@@ -18,7 +16,7 @@ const BusinessSampleNews = () => {
       <h2 className="text-2xl text-slate-700 font-bold mb-4">Business News</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Render business data */}
-        {displayedNews.map((item, i) => (
+        {businessNewsData.map((item, i) => (
           // it the id is null then it will be the index of the item
           <div
             key={item.source.id || i}
