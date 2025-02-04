@@ -20,7 +20,7 @@ const SportSampleNews = () => {
           // it the id is null then it will be the index of the item
           <div
             key={item.source.id || i}
-            className="card card-compact bg-base-100 shadow-xl"
+            className="card card-compact bg-slate-800  shadow-xl"
           >
             <figure>
               <img

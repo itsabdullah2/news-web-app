@@ -19,14 +19,14 @@ const BusinessNewsCards = () => {
           type="search"
           id="business-search"
           placeholder="Search..."
-          className="focus:outline-none text-slate-700 rounded-xl focus:placeholder:opacity-0 placeholder:duration-300 hover:placeholder:text-slate-900 border border-slate-700 py-3 px-2 w-[250px]"
+          className="focus:outline-none text-slate-700 rounded-xl focus:placeholder:opacity-0 placeholder:duration-300 hover:placeholder:text-slate-900 border border-slate-700 py-3 px-2 w-[250px] bg-transparent"
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Render sports data */}
         {businessNewsData.map((item, i) => (
           // it the id is null then it will be the index of the item
-          <div key={i} className="card card-compact bg-base-100 shadow-xl">
+          <div key={i} className="card card-compact bg-slate-800 shadow-xl">
             <figure>
               <img
                 src={item.urlToImage || urlToSupImage}
