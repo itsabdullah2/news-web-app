@@ -4,42 +4,38 @@ const Navbar = () => {
   const location = useLocation();
   const pathname = location.pathname;
 
-  const commonStyles =
-    'font-medium text-[17px] text-gray-500 hover:text-gray-200';
-  const active = 'text-white';
+  const commonStyles = 'font-medium text-[17px] hover:text-gray-100';
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900/70 fixed w-full top-0 left-0 z-10">
       <div className="container navbar mx-auto">
         <div className="flex-1">
-          <Link to="/" className="btn btn-ghost text-2xl text-white">
+          <Link to="/" className="text-2xl text-white">
             the.news
           </Link>
         </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link
-                to="/sports"
-                className={`${commonStyles} ${
-                  pathname === '/sports' ? active : ''
-                }`}
-              >
-                Sports
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/business"
-                className={`${commonStyles} ${
-                  pathname === '/business' ? active : ''
-                }`}
-              >
-                Business
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <ul className="flex items-center gap-6 px-1">
+          <li>
+            <Link
+              to="/sports"
+              className={`${commonStyles} ${
+                pathname === '/sports' ? 'text-white' : 'text-gray-300'
+              }`}
+            >
+              Sports
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/business"
+              className={`${commonStyles} ${
+                pathname === '/business' ? 'text-white' : 'text-gray-300'
+              }`}
+            >
+              Business
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
