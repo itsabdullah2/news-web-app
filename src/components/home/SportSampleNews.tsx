@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SportSampleNews = () => {
   const [sportsNewsData, setSportsNewsData] = useState<Articles[]>([]);
+
   useEffect(() => {
     getData('sports', (data) => {
       setSportsNewsData(data.slice(0, 6)); // Limit to 6 items
@@ -19,12 +20,12 @@ const SportSampleNews = () => {
         {sportsNewsData.map((item, i) => (
           // it the id is null then it will be the index of the item
           <div
-            key={item.source.id || i}
-            className="card card-compact bg-slate-800  shadow-xl"
+            key={item.source.id ?? i}
+            className="card card-compact bg-white shadow-xl"
           >
             <figure>
               <img
-                src={item.urlToImage || urlToSupImage}
+                src={item.urlToImage ?? urlToSupImage}
                 alt={item.title}
                 loading="lazy"
               />

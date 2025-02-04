@@ -19,12 +19,12 @@ const BusinessSampleNews = () => {
         {businessNewsData.map((item, i) => (
           // it the id is null then it will be the index of the item
           <div
-            key={item.source.id || i}
-            className="card card-compact bg-slate-800 shadow-xl"
+            key={item.source.id ?? i}
+            className="card card-compact bg-white shadow-xl"
           >
             <figure>
               <img
-                src={item.urlToImage || urlToSupImage}
+                src={item.urlToImage ?? urlToSupImage}
                 alt={item.title}
                 loading="lazy"
               />
