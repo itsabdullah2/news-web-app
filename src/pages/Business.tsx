@@ -1,5 +1,11 @@
+import Business from '../components/business';
+
 const BusinessPage = () => {
-  return <div>BusinessPage</div>;
+  return (
+    <>
+      <Business />
+    </>
+  );
 };
 
 export default BusinessPage;

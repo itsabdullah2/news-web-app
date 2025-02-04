@@ -1,5 +1,11 @@
+import Sports from '../components/sports';
+
 const SportsPage = () => {
-  return <div>SportsPage</div>;
+  return (
+    <>
+      <Sports />
+    </>
+  );
 };
 
 export default SportsPage;
