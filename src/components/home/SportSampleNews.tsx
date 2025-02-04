@@ -8,6 +8,11 @@ const SportSampleNews = () => {
 
   useEffect(() => {
     getData('sports', (data) => {
+      if (!data) {
+        console.error('No articles received from API');
+        return;
+      }
+
       setSportsNewsData(data.slice(0, 6)); // Limit to 6 items
     });
   }, []);

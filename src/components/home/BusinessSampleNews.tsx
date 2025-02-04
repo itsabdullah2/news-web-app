@@ -7,6 +7,11 @@ const BusinessSampleNews = () => {
   const [businessNewsData, setBusinessNewsData] = useState<Articles[]>([]);
   useEffect(() => {
     getData('business', (data) => {
+      if (!data) {
+        console.error('No articles received from API');
+        return;
+      }
+
       setBusinessNewsData(data.slice(0, 6)); // Limit to 6 items
     });
   }, []);
