@@ -33,10 +33,10 @@ const GeneralNews = () => {
         {/* Render sports data */}
         {generalNewsData.map((item, i) => (
           // it the id is null then it will be the index of the item
-          <div key={i} className="card card-compact bg-slate-800 shadow-xl">
+          <div key={i} className="card card-compact bg-white shadow-xl">
             <figure>
               <img
-                src={item.urlToImage || urlToSupImage}
+                src={item.urlToImage ?? urlToSupImage}
                 alt={item.title}
                 loading="lazy"
               />
