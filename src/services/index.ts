@@ -1,4 +1,4 @@
-const API_KEY = 'ca4896a32b1047fbbdf0d6a71c03a2fb';
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export interface Articles {
   author: string;
